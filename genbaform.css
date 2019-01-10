@@ -1,0 +1,222 @@
+﻿#genbaform {
+    padding-left:15px;
+}
+
+#tabpagebody {
+    margin-top:10px;
+    display: inline-block;
+    float: left;
+    width: 300px;
+}
+#genbaform li {
+    margin-bottom: 5px;
+}
+
+#genbaformbody {
+    width: 460px;
+    display: inline-block;
+    float: left;
+    padding: 10px 5px;
+}
+
+#genbaform li label {
+    line-height: 30px;
+}
+
+#genbaform li label {
+    height: 30px;
+    line-height: 30px;
+}
+
+#genbaform li input {
+    height: 30px;
+    line-height: 30px;
+}
+
+#genbaform li #bikocd {
+    width: 60px;
+}
+
+#genbaform li #biko {
+    margin-left: 15px;
+    width: 270px;
+}
+
+
+
+#tabpagebody .genbatabs {
+    width: 100%;
+    height: 489px;
+    background-color: white;
+    border: 1px solid #d9d9d9;
+    overflow-y: auto;
+}
+
+#tabpagebody .genbatabs #genbatabs-inner {
+    margin:5px 5px 5px 5px;
+	padding:2px 0;
+	position:relative;
+	overflow-x: hidden;
+}
+
+
+#tabpagebody .genbatabs .tabcontrol-position {
+	position: relative;
+}
+
+#tabpagebody .genbatabs .tabcontrol-position .tabcontrol-move {
+	position: absolute;
+	width: 100%;
+	z-index: 100;
+}
+
+
+#tabpagebody #hinshutable {
+    font-weight: bold;
+    color: black;
+    text-decoration: underline;
+}
+
+#tabpagebody .tabcontrol {
+    position: relative;
+    margin: 0 2px;
+    z-index: 90;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+#tabpagebody .hinshu, #tabpagebody .kei, #tabpagebody #dwidth {
+    padding: 1px 4px;
+	display: inline-block;
+    font-size: 12px;
+    height: 16px;
+    line-height: 16px;
+    color: #545454;
+    border: 1px solid #d9d9d9;
+    cursor: default;
+    background-color: #f0f0f0;
+    z-index: 100;
+}
+
+#tabpagebody .hinshu, #tabpagebody .kei {
+	position: absolute;
+}
+
+
+#tabpagebody .hinshu.active, #tabpagebody .kei.active {
+    border-bottom: 0px;
+    background-color: white;
+    padding: 2.5px 6px !important;
+    z-index: 110;
+}
+
+#tabpagebody .hinshu:hover, #tabpagebody .kei:hover {
+	background-color:#daeeff;
+}
+
+#tabpagebody .hinshu.active:hover, #tabpagebody .kei.active:hover {
+	background-color: white;
+}
+
+
+
+
+#tabpagebody .bodycontrol {
+    padding: 2px;
+    border: 1px solid #d9d9d9;
+    z-index: 80;
+}
+
+#tabpagebody #bodyhinshus.bodycontrol {
+    min-height: 454px;
+}
+
+#tabpagebody #bodyhinshus .bodycontrol {
+    min-height: 406px;
+}
+
+#tabpagebody .bodyhinshu, .bodykei {
+    padding: 2px 0;
+	margin: 0 2px;
+    display: none;
+	position: relative;
+}
+
+#tabpagebody .bodyhinshu .bodycontrol .kyododiv {
+    padding: 1px 0px;
+}
+    
+#tabpagebody .bodyhinshu .bodycontrol .kyododiv input, #tabpagebody .bodyhinshu .bodycontrol .kyododiv span {
+    display: inline;
+    vertical-align: middle;
+}
+
+#tabpagebody .bodyhinshu.active, #tabpagebody .bodykei.active {
+    display: block;
+	overflow-x: hidden;
+}
+
+
+
+#tabpagebody #bodyhinshus table {
+    border-collapse: collapse;
+    border-spacing: 0px;
+    font-size: 13px;
+    text-align: left;
+}
+
+#tabpagebody #bodyhinshus table th {
+    background-color: #F0F5F7;
+    width: 80px;
+}
+#tabpagebody #bodyhinshus table tr.odd {
+    background-color: #f5f8fa;
+}
+
+#tabpagebody #bodyhinshus table tr.even {
+    background-color: #FFFFFF;
+}
+
+
+
+#tabpagebody .genbakyodo-relations .tabslip {
+	position:absolute;
+	height: 19px;
+	top:2px;
+	right:0px;
+	z-index: 120;
+	background-color: white;
+	-webkit-user-select:none;
+	-moz-user-select:none;
+	-ms-user-select:none;
+	user-select:none;
+}
+
+#tabpagebody .genbakyodo-relations .tabslip.hide {
+	display:none;
+}
+
+#tabpagebody .genbakyodo-relations .tabslip-left, #tabpagebody .genbakyodo-relations .tabslip-right {
+	line-height: 13px;
+    display: inline-block;
+    width: 12px;
+    height: 14px;
+    border: 1px solid #d9d9d9;
+    color: #696969;
+	cursor:default;
+}
+#tabpagebody .genbakyodo-relations .tabslip-left:hover, #tabpagebody .genbakyodo-relations .tabslip-right:hover {
+	background-color:#daeeff;
+	border-color:#87c6fb;
+}
+#tabpagebody .genbakyodo-relations .tabslip-left:active, #tabpagebody .genbakyodo-relations .tabslip-right:active {
+	background-color:#c6e4ff;
+	border-color:#51b0ff;
+}
+
+
+
+
+

@@ -1,0 +1,112 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <link href="style.css" rel="stylesheet" />
+    <script src="jquery-1.10.2.min.js"></script>
+    <link href="xcConfirm.css" rel="stylesheet" />
+    <link href="genbaform.css" rel="stylesheet" /> 
+    <script src="xcConfirm.js"></script>
+    <script src="Common.js"></script>
+    <script type="text/javascript">
+        var genbacd = '0000000001';
+        //品種
+        var m_hinshus = [];
+        //径D
+        var m_keis = [];
+        //強度SD
+        var m_kyodos = [];
+
+        //現場使用強度
+        var t_genbakyodos = [];
+
+        var o_genbakyodos = {};
+        var biko = {};
+
+        var createby = "";
+        var createdate = "";
+        $(function () {
+            GetMetaData();
+            GetGenbaData();
+        });
+        function GetMetaData() {
+			var meta = {"hinshuList":[{"_hinshucd":"001","_hinshumei":"在来","_numberofdecimal":"0","_hinshumark":"D"},{"_hinshucd":"002","_hinshumei":"ネジ","_numberofdecimal":"1","_hinshumark":"N"},{"_hinshucd":"011","_hinshumei":"高強度","_numberofdecimal":"0","_hinshumark":"H"},{"_hinshucd":"021","_hinshumei":"测试A","_numberofdecimal":"0","_hinshumark":"A"},{"_hinshucd":"022","_hinshumei":"测试B","_numberofdecimal":"1","_hinshumark":"B"},{"_hinshucd":"023","_hinshumei":"测试C","_numberofdecimal":"2","_hinshumark":"C"},{"_hinshucd":"024","_hinshumei":"测试F","_numberofdecimal":"3","_hinshumark":"F"},{"_hinshucd":"025","_hinshumei":"测试E","_numberofdecimal":"4","_hinshumark":"E"}],"keiList":[{"_keicd":"010","_keimei":"D10   ","_unitweight":"0.560"},{"_keicd":"013","_keimei":"D13   ","_unitweight":"0.995"},{"_keicd":"016","_keimei":"D16   ","_unitweight":"1.560"},{"_keicd":"019","_keimei":"D19   ","_unitweight":"2.250"},{"_keicd":"022","_keimei":"D22   ","_unitweight":"3.040"},{"_keicd":"025","_keimei":"D25   ","_unitweight":"3.980"},{"_keicd":"029","_keimei":"D29   ","_unitweight":"5.040"},{"_keicd":"032","_keimei":"D32   ","_unitweight":"6.230"},{"_keicd":"035","_keimei":"D35   ","_unitweight":"7.510"},{"_keicd":"038","_keimei":"D38   ","_unitweight":"8.950"},{"_keicd":"041","_keimei":"D41   ","_unitweight":"10.500"},{"_keicd":"051","_keimei":"D51   ","_unitweight":"15.900"}],"kyodoList":[{"_kyodocd":"00295","_kyodomei":"SD295A    "},{"_kyodocd":"00345","_kyodomei":"SD345     "},{"_kyodocd":"00390","_kyodomei":"SD390     "},{"_kyodocd":"00490","_kyodomei":"SD490     "},{"_kyodocd":"00590","_kyodomei":"SD590     "},{"_kyodocd":"00685","_kyodomei":"SD685     "},{"_kyodocd":"00785","_kyodomei":"SD785     "},{"_kyodocd":"01275","_kyodomei":"SD1275    "}]};
+            var hinshuList = meta.hinshuList;
+            if (hinshuList != null) {
+                for (var i = 0; i < hinshuList.length; i++) {
+                    m_hinshus.push({ "hinshucd": hinshuList[i]._hinshucd, "hinshumei": hinshuList[i]._hinshumei, "hinshumark": hinshuList[i]._hinshumark });
+                }
+            }
+            var keiList = meta.keiList;
+            if (keiList != null) {
+                for (var i = 0; i < keiList.length; i++) {
+                    m_keis.push({ "keicd": keiList[i]._keicd, "keimei": keiList[i]._keimei });
+                }
+            }
+            var kyodoList = meta.kyodoList;
+            if (kyodoList != null) {
+                for (var i = 0; i < kyodoList.length; i++) {
+                    m_kyodos.push({ "kyodocd": kyodoList[i]._kyodocd, "kyodomei": kyodoList[i]._kyodomei });
+                }
+            }
+        }
+
+        function GetGenbaData() {
+		{
+			var genbakyodos = [{"_genbacd":"0000000001","_hinshucd":"002","_keicd":"010","_kyodocd":"00295"},{"_genbacd":"0000000001","_hinshucd":"002","_keicd":"013","_kyodocd":"00295"},{"_genbacd":"0000000001","_hinshucd":"011","_keicd":"010","_kyodocd":"00295"},{"_genbacd":"0000000001","_hinshucd":"011","_keicd":"013","_kyodocd":"00295"},{"_genbacd":"0000000001","_hinshucd":"011","_keicd":"016","_kyodocd":"00295"}]}
+			for (var i = 0; i < genbakyodos.length; i++) {
+                var gk = genbakyodos[i];
+                t_genbakyodos.push({ "genbacd": gk._genbacd, "hinshucd": gk._hinshucd, "keicd": gk._keicd, "kyodocd": gk._kyodocd });
+            }    
+        }
+
+    </script>
+	<script src="genbaform.js"></script>
+	
+    
+</head>
+
+<body style="min-width:915px;margin-left:20px;">
+
+    <div id="tabpagebody">
+        <div class="genbatabs">
+            <div id="dwidth">gf</div>
+            <div id="genbatabs-inner" class="genbakyodo-relations">
+				<div id="hinshus-outer" class="tabcontrol-position">
+					<div class="tabcontrol-move">
+						<div id="hinshus" class="tabcontrol">
+							<div id="hinshutable" class="hinshu">
+								材質
+							</div>
+						</div>
+					</div>
+				</div>
+                <div id="bodyhinshus" class="bodycontrol">
+                    <div id="bodyhinshutable" class="bodyhinshu">
+                        <table border="1">
+                            <thead>
+                                <tr>
+                                    <th>品種</th>
+                                    <th>径</th>
+                                    <th>規格</th>
+                                </tr>
+                            </thead>
+                            <tbody id="genbakyodos"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function () {
+        initTable();
+        initTab();
+        initEvent();
+});
+</script>
+</html>
+
